@@ -11,6 +11,10 @@
 		D243AEA0266318AE00A4E8FF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D243AE9F266318AE00A4E8FF /* ContentView.swift */; };
 		D243AEA2266318B100A4E8FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D243AEA1266318B100A4E8FF /* Assets.xcassets */; };
 		D243AEA5266318B100A4E8FF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D243AEA4266318B100A4E8FF /* Preview Assets.xcassets */; };
+		D243AEAE26632A1300A4E8FF /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D243AEAD26632A1300A4E8FF /* CardModel.swift */; };
+		D243AEB22663353100A4E8FF /* BottomCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D243AEB12663353100A4E8FF /* BottomCardView.swift */; };
+		D243AEB42663387000A4E8FF /* Purchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D243AEB32663387000A4E8FF /* Purchase.swift */; };
+		D243AEB82663482400A4E8FF /* VisualEffectBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = D243AEB72663482400A4E8FF /* VisualEffectBlur.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +24,10 @@
 		D243AEA1266318B100A4E8FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D243AEA4266318B100A4E8FF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D243AEA6266318B100A4E8FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D243AEAD26632A1300A4E8FF /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
+		D243AEB12663353100A4E8FF /* BottomCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomCardView.swift; sourceTree = "<group>"; };
+		D243AEB32663387000A4E8FF /* Purchase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Purchase.swift; sourceTree = "<group>"; };
+		D243AEB72663482400A4E8FF /* VisualEffectBlur.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualEffectBlur.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +62,9 @@
 			children = (
 				D243AE9D266318AE00A4E8FF /* Scrolling_AnimationApp.swift */,
 				D243AE9F266318AE00A4E8FF /* ContentView.swift */,
+				D243AEB62663481500A4E8FF /* Helpers */,
+				D243AEB02663352000A4E8FF /* Views */,
+				D243AEAC26632A0100A4E8FF /* Models */,
 				D243AEA1266318B100A4E8FF /* Assets.xcassets */,
 				D243AEA6266318B100A4E8FF /* Info.plist */,
 				D243AEA3266318B100A4E8FF /* Preview Content */,
@@ -67,6 +78,31 @@
 				D243AEA4266318B100A4E8FF /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D243AEAC26632A0100A4E8FF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D243AEAD26632A1300A4E8FF /* CardModel.swift */,
+				D243AEB32663387000A4E8FF /* Purchase.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D243AEB02663352000A4E8FF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D243AEB12663353100A4E8FF /* BottomCardView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D243AEB62663481500A4E8FF /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D243AEB72663482400A4E8FF /* VisualEffectBlur.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,7 +175,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D243AEA0266318AE00A4E8FF /* ContentView.swift in Sources */,
+				D243AEB42663387000A4E8FF /* Purchase.swift in Sources */,
+				D243AEB22663353100A4E8FF /* BottomCardView.swift in Sources */,
+				D243AEB82663482400A4E8FF /* VisualEffectBlur.swift in Sources */,
 				D243AE9E266318AE00A4E8FF /* Scrolling_AnimationApp.swift in Sources */,
+				D243AEAE26632A1300A4E8FF /* CardModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
