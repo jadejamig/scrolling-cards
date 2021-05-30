@@ -9,15 +9,15 @@ import SwiftUI
 
 struct CardModel: Identifiable {
     var id = UUID()
-    var color1: Color
-    var color2: Color
+    var image: String
     var money: String
+    var color: Color
 }
 
 let cards = [
-    CardModel(color1: Color(#colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1)), color2: Color(#colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)), money: "$999"),
-    CardModel(color1: Color(#colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1)), color2: Color(#colorLiteral(red: 0.9568627477, green: 0.6588235497, blue: 0.5450980663, alpha: 1)), money: "$1,256"),
-    CardModel(color1: Color(#colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)), color2: Color(#colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)), money: "$5,234"),
-    CardModel(color1: Color(#colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)), color2: Color(#colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)), money: "$3,356"),
-    CardModel(color1: Color(#colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1)), color2: Color(#colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)), money: "$534")
+    CardModel(image: "Blur01", money: "$999", color: Color(#colorLiteral(red: 0.4823529412, green: 0.3294117647, blue: 0.9647058824, alpha: 1))),
+    CardModel(image: "Blur02", money: "$1,256", color: Color(#colorLiteral(red: 0.372150749, green: 0.3631125689, blue: 1, alpha: 1))),
+    CardModel(image: "Blur05", money: "$5,234", color: Color(#colorLiteral(red: 1, green: 0.5067250133, blue: 0.8512491584, alpha: 1))),
+    CardModel(image: "Blur06", money: "$3,356", color: Color(#colorLiteral(red: 0.8208463788, green: 0.5029298663, blue: 1, alpha: 1))),
+    CardModel(image: "Blur07", money: "$534", color: Color(#colorLiteral(red: 0.348875463, green: 0.2365662456, blue: 0.9905931354, alpha: 1)))
 ]

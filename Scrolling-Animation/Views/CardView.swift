@@ -13,7 +13,7 @@ struct CardView: View {
     
     var body: some View {
         ZStack {
-            LinearGradient(gradient: Gradient(colors: [self.card.color1, self.card.color2]), startPoint: .bottomLeading, endPoint: .topTrailing)
+//            LinearGradient(gradient: Gradient(colors: [self.card.color1, self.card.color2]), startPoint: .bottomLeading, endPoint: .topTrailing)
             VStack {
                 HStack {
                     ForEach(0 ..< 3) { item in
@@ -57,6 +57,11 @@ struct CardView: View {
             .padding(.bottom, 25)
         }
         .frame(width: 370, height: 250)
+        .background(
+            Image(self.card.image)
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+        )
         .clipShape(RoundedRectangle(cornerRadius: 25.0, style: .continuous))
         .rotationEffect(.degrees(self.isNotRotated ? 0 : 90))
         .animation(.spring())

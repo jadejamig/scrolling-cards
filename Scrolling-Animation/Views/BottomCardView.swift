@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct BottomCardView: View {
+    var purchases: [PurchaseModel]
     var body: some View {
         VStack {
             Spacer()
@@ -25,7 +26,7 @@ struct BottomCardView: View {
 
 struct BottomCardView_Previews: PreviewProvider {
     static var previews: some View {
-        BottomCardView()
+        BottomCardView(purchases: purchases1)
     }
 }
 

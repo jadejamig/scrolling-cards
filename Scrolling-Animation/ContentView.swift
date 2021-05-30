@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var selectedIndex: Int = 0
     @State var isNotRotated = false
     
     @State var isDragging = false
@@ -17,23 +18,23 @@ struct ContentView: View {
         ZStack {
             Color.black.edgesIgnoringSafeArea(.all)
             
-            TabView(selection: $isNotRotated) {
-                ForEach(cards) { card in
+            TabView(selection: $selectedIndex) {
+                ForEach(0..<5) { i in
                     VStack(alignment: .center) {
                         Text("Current Balance")
                             .font(.subheadline)
                             .bold()
                             .foregroundColor(.white.opacity(0.5))
                             .offset(y: self.isNotRotated ? -50 : 0)
-                        Text("$11,502")
+                        Text(cards[i].money)
                             .font(.largeTitle)
                             .bold()
                             .foregroundColor(.white)
                             .offset(y: self.isNotRotated ? -50 : 0)
                         HStack {
                             GeometryReader { geometry in
-                                CardView(isNotRotated: self.$isNotRotated, card: card)
-                                    .shadow(color: card.color1.opacity(0.5), radius: 50, x: 10, y: 20)
+                                CardView(isNotRotated: self.$isNotRotated, card: cards[i])
+                                    .shadow(color: cards[i].color.opacity(0.5), radius: 20, x: 10, y: 10)
                                     .rotation3DEffect(Angle(degrees: Double(geometry.frame(in: .global).minX - 20) / 30),
                                                       axis: (x: 10, y: -20, z: 0))
                                     .padding(.top, isNotRotated ? -50 : CGFloat(50))
@@ -41,13 +42,15 @@ struct ContentView: View {
                         }
                     }
                     .padding(.top, 50)
+                    .tag(i)
                 }
+                
             }
-            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
             
             VStack {
                 Spacer()
-                BottomCardView()
+                BottomCardView(purchases: purchasesCollection[self.selectedIndex])
                     .offset(y: self.isNotRotated ? 0 : UIScreen.main.bounds.height)
                     .animation(.spring())
             }
@@ -57,20 +60,27 @@ struct ContentView: View {
                 DragGesture()
                     .onChanged({ value in
                         self.isDragging = true
-                        self.dragValue = value.translation.height
+                        if value.translation.height < -5 {
+                            self.dragValue = -5
+                        } else {
+                            self.dragValue = value.translation.height
+                        }
+                        
                     })
                     .onEnded({ value in
-                        if value.translation.height > 250 {
+                        if value.translation.height > 200 {
                             self.isNotRotated.toggle()
                         }
                         self.isDragging = false
                         self.dragValue = .zero
                     })
             )
+
         }
         .animation(.spring())
         .onTapGesture {
             self.isNotRotated.toggle()
+            print(self.selectedIndex)
         }
     }
 }
