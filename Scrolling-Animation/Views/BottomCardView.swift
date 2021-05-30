@@ -10,24 +10,16 @@ import SwiftUI
 struct BottomCardView: View {
     var body: some View {
         VStack {
-            Rectangle()
-                .frame(width: 100, height: 5)
-                .foregroundColor(Color.white.opacity(0.3))
-                .cornerRadius(16)
-                .padding(.top)
-                .padding(.bottom)
-            ScrollView {
-                VStack(spacing: 0) {
-                    ForEach(purchases) { purchase in
-                        cell(purchase: purchase)
-                            .background(Color(#colorLiteral(red: 0.1461126804, green: 0.1452512741, blue: 0.1467794478, alpha: 1)))
-                    }
-                }
+            Spacer()
+            ForEach(purchases) { purchase in
+                cell(purchase: purchase)
             }
+            Spacer()
         }
-        .frame(height: 450)
-        .background(Color(#colorLiteral(red: 0.1461126804, green: 0.1452512741, blue: 0.1467794478, alpha: 1)))
-        .clipShape(RoundedRectangle(cornerRadius: 24, style: .continuous))
+        .frame(maxWidth: .infinity)
+        .frame(height: 400)
+        .background(Color(#colorLiteral(red: 0.168627451, green: 0.168627451, blue: 0.168627451, alpha: 1)))
+        .clipShape(RoundedRectangle(cornerRadius: 28, style: .continuous))
     }
 }
 
@@ -67,7 +59,7 @@ struct cell: View {
             }
             .padding(.horizontal)
         }
-        .padding(.vertical)
+        .padding(.vertical, 8)
         
         
     }
