@@ -35,6 +35,7 @@ struct ContentView: View {
                             GeometryReader { geometry in
                                 CardView(isNotRotated: self.$isNotRotated, card: cards[i])
                                     .shadow(color: cards[i].color.opacity(0.5), radius: 20, x: 10, y: 10)
+                                    .scaleEffect(geometry.frame(in: .global).minX == 0 ? 1 : 0.9)
                                     .rotation3DEffect(Angle(degrees: Double(geometry.frame(in: .global).minX - 20) / 30),
                                                       axis: (x: 10, y: -20, z: 0))
                                     .padding(.top, isNotRotated ? -50 : CGFloat(50))
